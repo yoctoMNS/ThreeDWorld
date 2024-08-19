@@ -12,17 +12,17 @@ public class Bitmap {
     }
 
     public void render(Bitmap b, int ox, int oy) {
-        for (var y = 0; y < b.height; y++) {
-            var yy = y + oy;
+        for (int y = 0; y < b.height; y++) {
+            int yy = y + oy;
             if (yy < 0 || yy >= height) {
                 continue;
             }
-            for (var x = 0; x < b.width; x++) {
-                var xx = x + ox;
+            for (int x = 0; x < b.width; x++) {
+                int xx = x + ox;
                 if (xx < 0 || xx >= width) {
                     continue;
                 }
-                var alpha = b.pixels[x + y * b.width];
+                int alpha = b.pixels[x + y * b.width];
                 if (alpha > 0) {
                     pixels[xx + yy * width] = alpha;
                 }
