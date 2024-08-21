@@ -1,5 +1,7 @@
 package com.github.yoctomns.threedworld.graphics;
 
+import com.github.yoctomns.threedworld.Game;
+
 public class Screen extends Bitmap {
     public Bitmap3D perspectiveVision;
 
@@ -8,9 +10,9 @@ public class Screen extends Bitmap {
         this.perspectiveVision = new Bitmap3D(width, height);
     }
 
-    public void render() {
+    public void render(Game game) {
         clear();
-        perspectiveVision.render();
+        perspectiveVision.render(game);
         perspectiveVision.renderFog();
         render(perspectiveVision, 0, 0);
     }
